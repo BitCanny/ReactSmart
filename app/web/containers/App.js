@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // components
 import Header     from '../components/Header';
@@ -18,10 +19,12 @@ class App extends Component {
       <div className="react-native-web">
         <Header />
         <Login
-          onClick={() => dispatch(performLoginAsync())}
+          onClick={() => dispatch(performLoginAsync("77da73af49a4a2dbb496a1ac2f5a9043c392dc2b1de54455d446ffcbb7f41753","1d195f0e870065fdd87bc2d639871b8fb2ba41918f3ba4415b1c3f9e6a11239d","123456","9874614021"))}
           color={color}
-          data={data}
         />
+          {
+              data.loading?"Loading":data.objects.token!==undefined?"Login Successful" + data.objects.token:null
+          }
       </div>
     );
   }

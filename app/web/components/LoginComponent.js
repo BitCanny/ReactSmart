@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -27,7 +28,6 @@ export default class LoginComponent extends Component {
                     />
                     <br/>
                     <RaisedButton label="Submit" primary={true} style={style} onClick={onClick}/>
-                    {data.objects}+"changed"
                 </div>
             </MuiThemeProvider>
         </div>

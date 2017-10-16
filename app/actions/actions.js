@@ -1,5 +1,4 @@
 import {
-  TOGGLE_COLOR,
   REQUEST_START,
   REQUEST_DATA,
 } from '../constants/Constants';
@@ -46,10 +45,10 @@ export function performLoginUsingAxios(username,password){
 */
 
 /**Performing an async login  using Superagent as it is faster than axios**/
-export function performLoginAsync() {
+export function performLoginAsync(clientId,clientSecret,password,phone) {
     return dispatch => {
         dispatch({ type: REQUEST_START });
-        loginRequest().then(data => {
+        loginRequest(clientId,clientSecret,password,phone).then(data => {
             dispatch({ type: REQUEST_DATA, data: data });
         });
     };

@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react';
-import { View } from 'react-native';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { View,Text,ActivityIndicator } from 'react-native';
 import { connect }  from 'react-redux';
 import { appStyle } from '../styles/styles';
 // dumb components
@@ -20,9 +21,12 @@ class ReactNativeApp extends Component {
       <View style={appStyle.reactNativeWeb}>
         <Header />
         <LoginComponent
-          onPress={() => dispatch(performLoginAsync())}
+          onPress={() => dispatch(performLoginAsync("77da73af49a4a2dbb496a1ac2f5a9043c392dc2b1de54455d446ffcbb7f41753","1d195f0e870065fdd87bc2d639871b8fb2ba41918f3ba4415b1c3f9e6a11239d","123456","9874614021"))}
           color={color}
         />
+          {
+              data.loading?<ActivityIndicator size = {'large'}/>:data.objects.token!==undefined?<Text>Login Successful {'\n'}{data.objects.token}</Text>:null
+          }
       </View>
     );
   }
