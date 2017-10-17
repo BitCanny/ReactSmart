@@ -1,6 +1,6 @@
 import request from 'superagent';
 //const baseURL = 'http://localhost:3000';
-const baseURL = 'https://lgcp8efwg8.execute-api.us-east-1.amazonaws.com/dev/api';
+const baseURL = 
 
 /**
  * Hit the login Api with username and password.
